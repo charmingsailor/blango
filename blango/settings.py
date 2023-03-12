@@ -17,6 +17,7 @@ from configurations import values
 import dj_database_url
 
 
+
 class Dev(Configuration):
   # Build paths inside the project like this: BASE_DIR / 'subdir'.
   BASE_DIR = Path(__file__).resolve().parent.parent
@@ -42,7 +43,7 @@ class Dev(Configuration):
   CRISPY_TEMPLATE_PACK = "bootstrap5"
   CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 
-
+  AUTH_USER_MODEL = "blango_auth.User"
   # Application definition
 
   INSTALLED_APPS = [
@@ -52,6 +53,7 @@ class Dev(Configuration):
       'django.contrib.sessions',
       'django.contrib.messages',
       'django.contrib.staticfiles',
+      'blango_auth',
       'blog',
       'crispy_forms',
       'crispy_bootstrap5',
