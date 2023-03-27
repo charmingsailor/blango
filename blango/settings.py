@@ -1,3 +1,4 @@
+
 """
 Django settings for blango project.
 
@@ -59,6 +60,10 @@ class Dev(Configuration):
       'crispy_bootstrap5',
       'debug_toolbar'
   ]
+
+
+  EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+  ACCOUNT_ACTIVATION_DAYS = 7
 
 
   MIDDLEWARE = [

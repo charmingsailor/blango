@@ -7,6 +7,12 @@
     <title>Hello, world!</title>
   </head>
   <body>
+    {% if request.user.is_authenticated %}
+      <p>Log out <p>
+    {% else %}
+      <a class="nav-link" href="{% url "django_registration_register" %}">Register</a>
+      <a class="nav-link" href="{% url "login" %}">Log In</a>
+    {% endif %}
     <div class="container-fluid bg-ligth text-dark">
       {% block content %}
 
